@@ -1,0 +1,109 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{pgfplots}
+\usepackage{physics}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{multirow}
+
+\pgfplotsset{compat=1.16}
+
+
+\renewcommand{\thesubsection}{\thesection\Alph{subsection}}
+
+
+
+\title{Particle Physics PS1}
+\author{Joe Crowley}
+\date{October 2020}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancyhf{}
+\rhead{
+Joe Crowley \\
+Physics 215 \\
+Problem Set 1
+}
+\rfoot{Page \thepage}
+
+\begin{document}  
+
+\section{Hermitian Operators}
+\subsection{}
+\textit{For two Hermitian operators, $\hat{A}, \hat{B},$ both will all eigenvalues positive, show that $\operatorname{Tr}(\hat{A} \hat{B})>0$}
+
+$$
+\operatorname{Tr}\left(\hat{A}\hat{B}\right) = \sum_v \bra{v}\hat{A}\hat{B}\ket{v}
+$$
+
+$$
+\operatorname{Tr}\left(\hat{A}\hat{B}\right) = \sum_v \bra{v}\hat{A}\ketbra{w}\hat{B}\ket{v}
+$$
+\subsection{}
+\textit{For a Hermitian operator $\hat{A}$ with all eigenvalues positive, show that the matrix elements satisfy the inequality:}
+$$
+|\langle v|\hat{A}| w\rangle|^{2} \leq\langle v|\hat{A}| v\rangle\langle w|\hat{A}| w\rangle
+$$
+
+for any two kets, $|v\rangle$ and $|w\rangle,$ in the Hilbert space.
+
+
+\subsection{}
+\textit{Consider Hermitian operators $\hat{A}, \hat{B}$ and $\hat{H}$ which satisfy the commutations relations, $[\hat{A}, \hat{H}]=[\hat{B}, \hat{H}]=0,$ but $-\hat{A}, \hat{B}] \neq 0 .$ Prove that at least one of the eigenvalues of $\hat{H}$ must be degenerate.}
+
+
+\subsection{}
+\textit{For a Hermitian operator $\hat{A}$ show that,
+$$
+\operatorname{det}\left(e^{\hat{A}}\right)=e^{\operatorname{Tr}(\hat{A})}
+$$
+For an Hermitian operator $\hat{B}$ with all positive eigenvalues show that,
+$$
+\ln (\operatorname{det}(\hat{B}))=\operatorname{Tr}(\ln (\hat{B}))
+$$
+}
+
+\section{Anti-Hermitian operators}
+\subsection{}
+\textit{An operator $\hat{K}$ is said to be anti-Hermitian if it satisfies $\hat{K}^{\dagger}=-\hat{K}$. Show that an anti-Hermitian operator can have at most one real eigenvalue (possibly degenerate).}
+
+\subsection{}
+\textit{Show that the commutator $[\hat{A}, \hat{B}]$ of two Hermitian operators, $\hat{A}, \hat{B},$ is either anti-Hermitian or zero.}
+\subsection{}
+\textit{Demonstrate that it is not possible for two Hermitian operators, $\hat{Q}, \hat{P}$ to satisfy $[\hat{Q}, \hat{P}]=i \hbar \hat{1},$ where $\hat{1}$ denotes the identity operator in the $n$ - dimensional Hilbert space. How do you reconcile this with with the familiar positionmomentum commutation relations?}
+
+\section{Functions of operators}
+\subsection{}
+\textit{Consider an operator $\hat{C} \equiv(\hat{A}-\lambda \hat{B})^{-1}$. Assuming that the operator $\hat{A}$ is invertible, with inverse denoted $\hat{A}^{-1}$, derive a formal Taylor series expansion for $\hat{C}$ as a power series in the parameter $\lambda$.}
+\subsection{}
+\textit{Consider an operator $\hat{\mathcal{O}}_{\lambda} \equiv \exp (\lambda \hat{A}+\hat{B})$. What conditions must be placed on the operators $\hat{A}$ and $\hat{B}$ so that $\partial_{\lambda} \hat{\mathcal{O}}_{\lambda}=\hat{A} \hat{\mathcal{O}}_{\lambda} ?$ By performing the Taylor series expansion in powers of $\lambda,$ show that $\operatorname{Tr}\left(\partial_{\lambda} \hat{\mathcal{O}}_{\lambda}\right)=\operatorname{Tr}\left(\hat{A} \hat{\mathcal{O}}_{\lambda}\right)$ for
+arbitrary operators $\hat{A}$ and $\hat{B}$.}
+\subsection{}
+\textit{Consider two operators $\hat{A}$ and $\hat{B}$ whose commutator is a c-number. Show that 
+$$\exp (\lambda \hat{A}) \exp (\lambda \hat{B})=\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\lambda^{2}[\hat{A}, \hat{B}] / 2\right)$$}
+\subsection{}
+\textit{Find the eigenvalues of the three operators $\hat{A}, \hat{B}$ and $\hat{C}$ which satisfy $\hat{A}^{2}=p^{2}, \hat{B}^{2}=p \hat{B}$ and $\hat{C}^{3}=p^{2} \hat{C}$ for real c-number $p$.}
+
+\section{Unitary Operators}
+\subsection{}
+\textit{Show that an operator $\hat{A}$ that satisfies any two of the following conditions: (i) $\hat{A}$ is unitary, (ii) $\hat{A}$ is Hermitian, (iii) $\hat{A}^2 =\hat{1}$, also satisfies the third. }
+\subsection{}
+\textit{Show that the product of two unitary operators, $\hat{U}_{1} \hat{U}_{2},$ is also unitary.}
+\subsection{}
+\textit{Demonstrate that the Hermitian and anti-Hermitian parts of any unitary operator commute with one another, so that a unitary operator can always be diagonalized. What are the properties of the eigenvalues of a unitary operator?}
+\subsection{}
+\textit{Show that an operator of the form $\hat{U}=\exp (i \hat{H})$ is unitary, if $\hat{H}$ is an Hermitian operator.}
+\subsection{}
+\textit{Consider two operators $\hat{A}$ and $\hat{A}^{\prime}$ which are related by a unitary transformation,} 
+$$
+\hat{A}^{\prime}=\hat{U} \hat{A} \hat{U}^{\dagger}.
+$$
+\textit{Show that $\operatorname{Tr}\left(\hat{A}^{\prime}\right)=\operatorname{Tr}(\hat{A})$ and $\operatorname{det}\left(\hat{A}^{\prime}\right)=\operatorname{det}(\hat{A})$}
+
+\end{document}
