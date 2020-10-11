@@ -13,6 +13,7 @@
 
 
 \renewcommand{\thesubsection}{\thesection\Alph{subsection}}
+\newcommand*{\qed}{\null\nobreak\hfill\ensuremath{\square}}
 
 
 
@@ -36,24 +37,50 @@ Problem Set 1
 
 \section{Hermitian Operators}
 \subsection{}
-\textit{For two Hermitian operators, $\hat{A}, \hat{B},$ both will all eigenvalues positive, show that $\operatorname{Tr}(\hat{A} \hat{B})>0$}
+\textit{For two Hermitian operators, $\hat{A}, \hat{B},$ both will all eigenvalues positive, show that $\operatorname{Tr}(\hat{A} \hat{B})>0$. }
+
+\begin{equation*}
+\begin{split}
+    \operatorname{Tr}\left(\hat{A}\hat{B}\right) &= \sum_v \bra{v}\hat{A}\hat{B}\ket{v}\\
+    &= \sum_{v,w} \bra{v}\hat{A}\ketbra{w}\hat{B}\ket{v}\\
+    &= \sum_{v,w} a_w\braket{v}{w}\bra{w}\hat{B}\ket{v}\\
+    &= \sum_{v,w}  a_w b_v\braket{v}{w}\braket{w}{v}\\
+    &= \sum_{v,w}  a_w b_v{\left|\braket{v}{w}\right| }^2
+\end{split}
+\end{equation*}
+
+Since the values $ a_w, b_v, \text{and} {\left|\braket{v}{w}\right| }^2$ are positive, 
 
 $$
-\operatorname{Tr}\left(\hat{A}\hat{B}\right) = \sum_v \bra{v}\hat{A}\hat{B}\ket{v}
+    \operatorname{Tr}\left(\hat{A}\hat{B}\right) >0
 $$
+\qed
 
-$$
-\operatorname{Tr}\left(\hat{A}\hat{B}\right) = \sum_v \bra{v}\hat{A}\ketbra{w}\hat{B}\ket{v}
-$$
 \subsection{}
 \textit{For a Hermitian operator $\hat{A}$ with all eigenvalues positive, show that the matrix elements satisfy the inequality:}
 $$
 |\langle v|\hat{A}| w\rangle|^{2} \leq\langle v|\hat{A}| v\rangle\langle w|\hat{A}| w\rangle
-$$
+$$ for any two kets, $|v\rangle$ and $|w\rangle,$ in the Hilbert space.
 
-for any two kets, $|v\rangle$ and $|w\rangle,$ in the Hilbert space.
+First, let $\ket{\psi}$ be a linear combination of $\ket{v}$ and $\ket{w}$:
 
+\begin{align*}
+    \ket{\psi} &= \ket{v} +\alpha \ket{w} \\
+    \bra{\psi}&= \bra{v} +\alpha^* \bra{w}
+\end{align*}
 
+\begin{align*}
+    \bra\psi \hat A \ket\psi&= \left(\bra{v} +\alpha^* \bra{w}\right) \hat A \left(\ket{v} +\alpha \ket{w}\right)\\
+    & =\bra v\hat{A} \ket v+|\alpha|^{2} \bra w \hat{A}  \ket w + \alpha \bra  v\hat A \ket w+\alpha^{*}\bra w\hat{A} \ket v
+\end{align*}
+
+Let $\alpha = -\frac{\bra{v}\hat A \ket w}{\bra w \hat A \ket w}$.
+\begin{align*}
+    \bra\psi \hat A \ket\psi& =\bra v\hat{A} \ket v+|\alpha|^{2} \bra w \hat{A}  \ket w + \alpha \bra  v\hat A \ket w+\alpha^{*}\bra w\hat{A} \ket v\\
+    & =\bra v\hat{A} \ket v+\left| -\frac{\bra{v}\hat A \ket w}{\bra w \hat A \ket w}\right|^{2} \bra w \hat{A}  \ket w  -\frac{\bra{v}\hat A \ket w}{\bra w \hat A \ket w} \bra  v\hat A \ket w -\frac{\bra{w}\hat A \ket v}{\bra w \hat A \ket w}\bra w\hat{A} \ket v \\
+    &= \bra v\hat{A} \ket v - \frac{\left|\bra v \hat A \ket w \right|^2}{\bra w \hat A \ket w}
+\end{align*}
+    
 \subsection{}
 \textit{Consider Hermitian operators $\hat{A}, \hat{B}$ and $\hat{H}$ which satisfy the commutations relations, $[\hat{A}, \hat{H}]=[\hat{B}, \hat{H}]=0,$ but $-\hat{A}, \hat{B}] \neq 0 .$ Prove that at least one of the eigenvalues of $\hat{H}$ must be degenerate.}
 
