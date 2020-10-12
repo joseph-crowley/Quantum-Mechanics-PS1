@@ -8,12 +8,13 @@
 \usepackage{wrapfig}
 \usepackage{hyperref}
 \usepackage{multirow}
+\usepackage{amsthm}
 
 \pgfplotsset{compat=1.16}
 
 
 \renewcommand{\thesubsection}{\thesection\Alph{subsection}}
-\newcommand*{\qed}{\null\nobreak\hfill\ensuremath{\square}}
+\renewcommand\qedsymbol{\square}
 
 
 
@@ -54,7 +55,7 @@ Since the values $ a_w, b_v, \text{and} {\left|\braket{v}{w}\right| }^2$ are pos
 $$
     \operatorname{Tr}\left(\hat{A}\hat{B}\right) >0
 $$
-\qed
+
 
 \subsection{}
 \textit{For a Hermitian operator $\hat{A}$ with all eigenvalues positive, show that the matrix elements satisfy the inequality:}
@@ -80,9 +81,29 @@ Let $\alpha = -\frac{\bra{v}\hat A \ket w}{\bra w \hat A \ket w}$.
     & =\bra v\hat{A} \ket v+\left| -\frac{\bra{v}\hat A \ket w}{\bra w \hat A \ket w}\right|^{2} \bra w \hat{A}  \ket w  -\frac{\bra{v}\hat A \ket w}{\bra w \hat A \ket w} \bra  v\hat A \ket w -\frac{\bra{w}\hat A \ket v}{\bra w \hat A \ket w}\bra w\hat{A} \ket v \\
     &= \bra v\hat{A} \ket v - \frac{\left|\bra v \hat A \ket w \right|^2}{\bra w \hat A \ket w}
 \end{align*}
+
+Since $\hat A$ has only positive eigenvalues, and each term in the equation above is positive, 
+
+\begin{align*}
+     \bra\psi \hat A \ket\psi &\geq 0\\
+     \bra v\hat{A} \ket v - \frac{\left|\bra v \hat A \ket w \right|^2}{\bra w \hat A \ket w} &\geq 0\\
+     \bra v\hat{A} \ket v &\geq \frac{\left|\bra v \hat A \ket w \right|^2}{\bra w \hat A \ket w}\\
+     \bra v\hat{A} \ket v \bra w \hat A \ket w &\geq \left|\bra v \hat A \ket w \right|^2\\
+\end{align*}
+
     
 \subsection{}
-\textit{Consider Hermitian operators $\hat{A}, \hat{B}$ and $\hat{H}$ which satisfy the commutations relations, $[\hat{A}, \hat{H}]=[\hat{B}, \hat{H}]=0,$ but $-\hat{A}, \hat{B}] \neq 0 .$ Prove that at least one of the eigenvalues of $\hat{H}$ must be degenerate.}
+\textit{Consider Hermitian operators $\hat{A}, \hat{B}$ and $\hat{H}$ which satisfy the commutations relations, $[\hat{A}, \hat{H}]=[\hat{B}, \hat{H}]=0,$ but $[\hat{A}, \hat{B}] \neq 0 .$ Prove that at least one of the eigenvalues of $\hat{H}$ must be degenerate.}
+\begin{proof}
+Assume there are no degeneracies in $\hat H$, for basis kets $\ket{\alpha_i}$ and $\ket{\beta_j}$ of operators $\hat A$ and $\hat B$ respectively. This gives
+\begin{align*}
+    \hat H \ket{\alpha_i} &= a_i \ket{\alpha_i}\\
+    \hat H \ket{\beta_j} &= b_j \ket{\beta_j}   . 
+\end{align*}
+If $\hat H$ is non-degenerate, $\bra{\alpha_i}\ket{\beta_j} = \delta_{ij}$, which implies the eigenkets for $\hat A$ are the same as the eigenkets for $\hat B$. If $\hat A$ and $\hat B$ have the same eigenkets, $[\hat A,\hat B] = 0$. But we assumed $[\hat A,\hat B] \neq 0$. Contradiction!
+
+$\therefore \hat H $ is degenerate.
+\end{proof} 
 
 
 \subsection{}
@@ -96,9 +117,35 @@ $$
 $$
 }
 
+$$
+\hat A = \hat{P}^{-1} \hat \Lambda \hat P
+$$
+
+\begin{align*}
+    \exp\left(\hat A\right) & = \sum_{n=0}^\infty \frac{\hat{A}^n} {n!} \\ 
+    &= \sum_{n=0}^\infty  \hat{P}^{-1} \frac{\hat{\Lambda}^n} {n!}\, \hat{P}\\
+    &= \hat{P}^{-1} \sum_{n=0}^\infty  \frac{\hat{\Lambda}^n} {n!}\, \hat{P}\\
+\end{align*}
+\begin{align*}
+    \operatorname{det}\left(\exp\left(\hat A\right) \right)&= \operatorname{det}\left(\hat{P}^{-1} \sum_{n=0}^\infty  \frac{\hat{\Lambda}^n} {n!}\, \hat{P} \right)\\
+    &= \operatorname{det}\left(\hat{P}^{-1}\right)\operatorname{det}\left(\exp\left(\hat \Lambda\right)\right)\operatorname{det}\left(\hat{P}\right)\\
+    &= \operatorname{det}\left(\exp\left(\hat \Lambda\right)\right)\\
+    &= e^{\lambda_1}e^{\lambda_2}e^{\lambda_3}e^{\lambda_4}\ldots\\
+\end{align*}
+\begin{align*}
+    e^{\operatorname{Tr} \left(\hat A\right)}&=e^{\lambda_1+\lambda_2+\lambda_3+\ldots} \\
+    &= e^{\lambda_1}e^{\lambda_2}e^{\lambda_3}e^{\lambda_4}\ldots\\
+\end{align*}
+
+\begin{equation*}
+    \operatorname{det}\left(e^{\hat{A}}\right)=e^{\operatorname{Tr}(\hat{A})}
+\end{equation*}
+
 \section{Anti-Hermitian operators}
 \subsection{}
 \textit{An operator $\hat{K}$ is said to be anti-Hermitian if it satisfies $\hat{K}^{\dagger}=-\hat{K}$. Show that an anti-Hermitian operator can have at most one real eigenvalue (possibly degenerate).}
+
+
 
 \subsection{}
 \textit{Show that the commutator $[\hat{A}, \hat{B}]$ of two Hermitian operators, $\hat{A}, \hat{B},$ is either anti-Hermitian or zero.}
