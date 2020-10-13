@@ -18,7 +18,7 @@
 
 
 
-\title{Particle Physics PS1}
+\title{Quantum Mechanics PS1}
 \author{Joe Crowley}
 \date{October 2020}
 
@@ -30,7 +30,7 @@
 \rhead{
 Joe Crowley \\
 Physics 215 \\
-Problem Set 1
+Problem Set 1\\
 }
 \rfoot{Page \thepage}
 
@@ -111,7 +111,7 @@ $\therefore \hat H $ is degenerate.
 $$
 \operatorname{det}\left(e^{\hat{A}}\right)=e^{\operatorname{Tr}(\hat{A})}
 $$
-For an Hermitian operator $\hat{B}$ with all positive eigenvalues show that,
+For a Hermitian operator $\hat{B}$ with all positive eigenvalues show that,
 $$
 \ln (\operatorname{det}(\hat{B}))=\operatorname{Tr}(\ln (\hat{B}))
 $$
@@ -162,7 +162,7 @@ $$
     -\bra{\psi_i} \hat{K} \ket{\psi_i} &= \lambda_i^* \\
     -\lambda_i &= \lambda_i^* \\
 \end{align*}
-Only true when $\Re\left(\lambda_i\right)= 0$. The only possible real eigenvalue of any anti-hermitian matrix is 0. 
+Only true when $\Re\left(\lambda_i\right)= 0$. The only possible real eigenvalue of any anti-Hermitian matrix is 0. 
 
 \subsection{}
 \textit{Show that the commutator $[\hat{A}, \hat{B}]$ of two Hermitian operators, $\hat{A}, \hat{B},$ is either anti-Hermitian or zero.}
@@ -177,7 +177,7 @@ In the case that $\hat{A}= \hat{B}$, $[\hat{A}, \hat{B}] = 0$. Otherwise,
     &=-\left(\hat A \hat B-\hat B \hat A  \right)\\
     &= - [\hat{A}, \hat{B}]\\
 \end{align*}
-$\therefore [\hat{A}, \hat{B}]$ is either Anti-hermitian or 0.  
+$\therefore [\hat{A}, \hat{B}]$ is either Anti-Hermitian or 0.  
 \end{proof}
 
 \subsection{}
@@ -187,7 +187,7 @@ $$
 \operatorname{Tr}\left(\left[\hat{Q} , \hat{P}\right]\right)=\operatorname{Tr}(\hat{Q} \hat{P})-\operatorname{Tr}(\hat{P} \hat{Q})
 $$
 
-Because $\hat P$ and $\hat Q$ are hermitian, 
+Because $\hat P$ and $\hat Q$ are Hermitian, 
 $$
 \left(\hat Q \hat P\right)^\dagger = \hat P \hat Q. 
 $$
@@ -195,7 +195,7 @@ $$
 \implies \operatorname{Tr}(\hat{Q} \hat{P})=\operatorname{Tr}(\hat{P} \hat{Q})
 $$
 $$
-\implies \operatorname{Tr}\left(\left[\hat{Q} , \hat{P}\right]\right) = 0 \quad \forall(\hat Q, \hat P) hermitian
+\implies \operatorname{Tr}\left(\left[\hat{Q} , \hat{P}\right]\right) = 0 \quad \forall(\hat Q, \hat P) Hermitian
 $$
 
 $$ 
@@ -286,12 +286,77 @@ $$\exp(\lambda \hat{A}) \exp(\lambda \hat{B})=\exp \left(\lambda \hat{A}+\lambda
 \section{Unitary Operators}
 \subsection{}
 \textit{Show that an operator $\hat{A}$ that satisfies any two of the following conditions: (i) $\hat{A}$ is unitary, (ii) $\hat{A}$ is Hermitian, (iii) $\hat{A}^2 =\hat{1}$, also satisfies the third. }
+
+
+Case 1: $\hat A$ is unitary and Hermitian. 
+$$
+\begin{array}{r}
+\hat{A}^{-1} \hat{A}=\hat{1} \\
+\hat{A}^{\dagger} \hat{A}=\hat{1} \\
+\hat{A} \hat{A}=\hat{1}  \\
+\hat{A}^{2}=\hat{1}  
+\end{array}
+$$
+
+Case 2: $\hat A$ is Hermitian and $\hat{A}^2 = \hat 1$. 
+\begin{align*}
+    \hat{A}&=\hat{A}^\dagger \\
+    \hat{A}^2 &=\hat{A}^\dagger \hat A \\ 
+    \hat{1}&=\hat{A}^\dagger \hat A \\
+    \hat{A}^{-1}&=\hat{A}^\dagger \hat A \hat{A}^{-1} \\
+    \hat{A}^{-1}&=\hat{A}^\dagger\\
+    \hat{A}^{-1}&=\hat{A}
+\end{align*}
+
+Case 3: $\hat A$ is unitary and $\hat{A}^2 = \hat 1$.
+\begin{align*}
+    \hat{A}^2&=\hat{1} \\
+    \hat{A}^2&=\hat{A} \hat{A}^{-1} \\
+    \hat{A}^2&=\hat{A} \hat{A}^{\dagger} \\
+    \hat{A}^{-1} \hat{A} \hat{A}&=\hat{A}^{-1} \hat{A} \hat{A}^{\dagger} \\
+    \hat{A}^2&=\hat{A}^{\dagger} 
+\end{align*}
+
+
 \subsection{}
 \textit{Show that the product of two unitary operators, $\hat{U}_{1} \hat{U}_{2},$ is also unitary.}
+\begin{align*}
+    \left(\hat{U}_1 \hat{U}_2\right) \left(\hat{U}_1 \hat{U}_2\right)^{-1} &= \hat 1 \\ 
+    \hat{U}_1 \hat{U}_2 \hat{U}_{2}^{-1} \hat{U}_{1}^{-1} &= \hat 1 \\ 
+    \hat{U}_1 \hat{U}_2 \hat{U}_{2}^{\dagger} \hat{U}_{1}^{\dagger} &= \hat 1 \\ 
+    \left(\hat{U}_1 \hat{U}_2\right) \left(\hat{U}_1 \hat{U}_2\right)^{\dagger} &= \hat 1 \\
+    \left(\hat{U}_1 \hat{U}_2\right)^{-1}\left(\hat{U}_1 \hat{U}_2\right) \left(\hat{U}_1 \hat{U}_2\right)^{\dagger} &= \left(\hat{U}_1 \hat{U}_2\right)^{-1} \\
+    \left(\hat{U}_1 \hat{U}_2\right)^{\dagger} &= \left(\hat{U}_1 \hat{U}_2\right)^{-1} 
+\end{align*}
+
 \subsection{}
 \textit{Demonstrate that the Hermitian and anti-Hermitian parts of any unitary operator commute with one another, so that a unitary operator can always be diagonalized. What are the properties of the eigenvalues of a unitary operator?}
+
+Using the relations $\hat H = \frac{1}{2} (\hat{U} + \hat{U}^\dagger),\hat K = \frac{1}{2} (\hat{U}  - \hat{ U}^\dagger)$
+\begin{align*}
+    \left[\hat H, \hat K \right] &= \frac{1}{4}\left[\hat{U} + \hat{U}^\dagger, \hat{U} - \hat{U}^\dagger\right]\\
+    & = \frac{1}{4}\left(\hat{U}^2 + (\hat{U}^\dagger)^2 -  \hat{U}^2 - (\hat{U}^\dagger)^2 \right)\\
+    &=0
+\end{align*}
+
+The properties of the eigenvalues of $\hat U$ are
+\begin{align*}
+    \hat{U}^\dagger \hat{U} = \hat 1\\
+    \bra{\psi}\hat{U}^\dagger \hat{U}\ket{\psi} &= \bra{\psi}\hat 1 \ket{\psi}\\
+    u^2 &=1
+\end{align*}
+
 \subsection{}
-\textit{Show that an operator of the form $\hat{U}=\exp (i \hat{H})$ is unitary, if $\hat{H}$ is an Hermitian operator.}
+\textit{Show that an operator of the form $\hat{U}=\exp (i \hat{H})$ is unitary, if $\hat{H}$ is a Hermitian operator.}
+
+
+\begin{align*}
+    \hat{U} &=\exp (i \hat{H}) \\
+    \hat{U}^\dagger &=\exp (-i \hat{H}^\dagger) \\
+    \hat{U}^\dagger &=\exp (-i \hat{H}) \\
+    \hat{U}^\dagger &=\hat{U}^{-1}
+\end{align*}
+
 \subsection{}
 \textit{Consider two operators $\hat{A}$ and $\hat{A}^{\prime}$ which are related by a unitary transformation,} 
 $$
