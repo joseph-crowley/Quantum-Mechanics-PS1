@@ -246,14 +246,14 @@ arbitrary operators $\hat{A}$ and $\hat{B}$.}
 
 \subsection{}
 \textit{Consider two operators $\hat{A}$ and $\hat{B}$ whose commutator is a complex number. Show that 
-$$\exp(\lambda \hat{A}) \exp(\lambda \hat{B})=\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\lambda^{2}[\hat{A}, \hat{B}] / 2\right)$$}
+$$\exp(\lambda \hat{A}) \exp(\lambda \hat{B})=\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)$$}
 \begin{proof}
     First note that the equation holds for $\lambda = 0$. Then, taking derivatives of each side of the equation, 
     \begin{align*}
         \partial_\lambda\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right)&=\left(\hat A + \hat B + \lambda [\hat A, \hat B]  \right)\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right)\\
-        \partial_\lambda\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\lambda^{2}[\hat{A}, \hat{B}] / 2\right)\right) &= \left(\hat A + \hat B +\lambda[\hat A, \hat B]\right)\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\lambda^{2}[\hat{A}, \hat{B}] / 2\right)\right)\\
-        \left[\partial_\lambda\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right) \right]_{\lambda=0} &= \left[\partial_\lambda\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\lambda^{2}[\hat{A}, \hat{B}] / 2\right)\right) \right]_{\lambda=0}\\
-        \left[{\partial_\lambda}^n\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right) \right]_{\lambda=0} &= \left[{\partial_\lambda}^n\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\lambda^{2}[\hat{A}, \hat{B}] / 2\right)\right) \right]_{\lambda=0}
+        \partial_\lambda\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right) &= \left(\hat A + \hat B +\lambda[\hat A, \hat B]\right)\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right)\\
+        \left[\partial_\lambda\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right) \right]_{\lambda=0} &= \left[\partial_\lambda\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right) \right]_{\lambda=0}\\
+        \left[{\partial_\lambda}^n\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right) \right]_{\lambda=0} &= \left[{\partial_\lambda}^n\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right) \right]_{\lambda=0}
     \end{align*}
     By induction, 
     \begin{align*}
@@ -266,7 +266,7 @@ $$\exp(\lambda \hat{A}) \exp(\lambda \hat{B})=\exp \left(\lambda \hat{A}+\lambda
     \end{align*}
     since the equation and each term in its expansion agree at $\lambda = 0$, 
     $$
-        \boxed{\exp(\lambda \hat{A}) \exp(\lambda \hat{B})=\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\lambda^{2}[\hat{A}, \hat{B}] / 2\right)}
+        \boxed{\exp(\lambda \hat{A}) \exp(\lambda \hat{B})=\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)}
     $$
 \end{proof}
 
@@ -282,5 +282,21 @@ $$\exp(\lambda \hat{A}) \exp(\lambda \hat{B})=\exp \left(\lambda \hat{A}+\lambda
     \hat{C}^3 \ket c=\hat{C} c^2 \ket c  &= p^2 \hat{C} \ket c \\
      &\implies c = \pm p \\
 \end{align*}
+
+\section{Unitary Operators}
+\subsection{}
+\textit{Show that an operator $\hat{A}$ that satisfies any two of the following conditions: (i) $\hat{A}$ is unitary, (ii) $\hat{A}$ is Hermitian, (iii) $\hat{A}^2 =\hat{1}$, also satisfies the third. }
+\subsection{}
+\textit{Show that the product of two unitary operators, $\hat{U}_{1} \hat{U}_{2},$ is also unitary.}
+\subsection{}
+\textit{Demonstrate that the Hermitian and anti-Hermitian parts of any unitary operator commute with one another, so that a unitary operator can always be diagonalized. What are the properties of the eigenvalues of a unitary operator?}
+\subsection{}
+\textit{Show that an operator of the form $\hat{U}=\exp (i \hat{H})$ is unitary, if $\hat{H}$ is an Hermitian operator.}
+\subsection{}
+\textit{Consider two operators $\hat{A}$ and $\hat{A}^{\prime}$ which are related by a unitary transformation,} 
+$$
+\hat{A}^{\prime}=\hat{U} \hat{A} \hat{U}^{\dagger}.
+$$
+\textit{Show that $\operatorname{Tr}\left(\hat{A}^{\prime}\right)=\operatorname{Tr}(\hat{A})$ and $\operatorname{det}\left(\hat{A}^{\prime}\right)=\operatorname{det}(\hat{A})$}
 
 \end{document}
