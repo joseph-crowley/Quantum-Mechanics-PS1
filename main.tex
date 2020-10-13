@@ -3,14 +3,12 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{fancyhdr}
-\usepackage{pgfplots}
 \usepackage{physics}
 \usepackage{wrapfig}
 \usepackage{hyperref}
 \usepackage{multirow}
 \usepackage{amsthm}
 
-\pgfplotsset{compat=1.16}
 
 
 \renewcommand{\thesubsection}{\thesection\Alph{subsection}}
@@ -23,8 +21,8 @@
 \date{October 2020}
 
 \pagestyle{fancy}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
 
 \fancyhf{}
 \rhead{
@@ -64,43 +62,38 @@ $$
 $$ for any two kets, $|v\rangle$ and $|w\rangle,$ in the Hilbert space.
 \begin{proof}
 First, let $\ket{\psi}$ be a linear combination of $\ket{v}$ and $\ket{w}$:
-
 \begin{align*}
     \ket{\psi} &= \ket{v} +\alpha \ket{w} \\
     \bra{\psi}&= \bra{v} +\alpha^* \bra{w}
 \end{align*}
-
 \begin{align*}
-    \bra\psi \hat A \ket\psi&= \left(\bra{v} +\alpha^* \bra{w}\right) \hat A \left(\ket{v} +\alpha \ket{w}\right)\\
-    & =\bra v\hat{A} \ket v+|\alpha|^{2} \bra w \hat{A}  \ket w + \alpha \bra  v\hat A \ket w+\alpha^{*}\bra w\hat{A} \ket v
+    \bra\psi \hat{A} \ket\psi&= \left(\bra{v} +\alpha^* \bra{w}\right) \hat{A} \left(\ket{v} +\alpha \ket{w}\right)\\
+    & =\bra{v}\hat{A} \ket{v}+|\alpha|^{2} \bra{w} \hat{A}  \ket{w} + \alpha \bra{v}\hat{A} \ket{w}+\alpha^{*}\bra{w}\hat{A} \ket{v}
 \end{align*}
-
-Let $\alpha = -\frac{\bra{v}\hat A \ket w}{\bra w \hat A \ket w}$.
+Let $\alpha = -\frac{\bra{v}\hat{A} \ket{w}}{\bra{w} \hat{A} \ket{w}}$.
 \begin{align*}
-    \bra\psi \hat A \ket\psi& =\bra v\hat{A} \ket v+|\alpha|^{2} \bra w \hat{A}  \ket w + \alpha \bra  v\hat A \ket w+\alpha^{*}\bra w\hat{A} \ket v\\
-    & =\bra v\hat{A} \ket v+\left| -\frac{\bra{v}\hat A \ket w}{\bra w \hat A \ket w}\right|^{2} \bra w \hat{A}  \ket w  -\frac{\bra{v}\hat A \ket w}{\bra w \hat A \ket w} \bra  v\hat A \ket w -\frac{\bra{w}\hat A \ket v}{\bra w \hat A \ket w}\bra w\hat{A} \ket v \\
-    &= \bra v\hat{A} \ket v - \frac{\left|\bra v \hat A \ket w \right|^2}{\bra w \hat A \ket w}
+    \bra\psi \hat{A} \ket\psi& =\bra{v}\hat{A} \ket{v}+|\alpha|^{2} \bra{w} \hat{A}  \ket{w} + \alpha \bra{v}\hat{A} \ket{w}+\alpha^{*}\bra{w}\hat{A} \ket{v}\\
+    & =\bra{v}\hat{A} \ket{v}+\left| -\frac{\bra{v}\hat{A} \ket{w}}{\bra{w} \hat{A} \ket{w}}\right|^{2} \bra{w} \hat{A}  \ket{w}  -\frac{\bra{v}\hat{A} \ket{w}}{\bra{w} \hat{A} \ket{w}} \bra{v}\hat{A} \ket{w} -\frac{\bra{w}\hat{A} \ket{v}}{\bra{w} \hat{A} \ket{w}}\bra{w}\hat{A} \ket{v} \\
+    &= \bra{v}\hat{A} \ket{v} - \frac{\left|\bra{v} \hat{A} \ket{w} \right|^2}{\bra{w} \hat{A} \ket{w}}
 \end{align*}
-
-Since $\hat A$ has only positive eigenvalues, and each term in the equation above is positive, 
-
+Since $\hat{A}$ has only positive eigenvalues, and each term in the equation above is positive, 
 \begin{align*}
-     \bra\psi \hat A \ket\psi &\geq 0\\
-     \bra v\hat{A} \ket v - \frac{\left|\bra v \hat A \ket w \right|^2}{\bra w \hat A \ket w} &\geq 0\\
-     \bra v\hat{A} \ket v &\geq \frac{\left|\bra v \hat A \ket w \right|^2}{\bra w \hat A \ket w}\\
-     \bra v\hat{A} \ket v \bra w \hat A \ket w &\geq \left|\bra v \hat A \ket w \right|^2\\
+     \bra\psi \hat{A} \ket\psi &\geq 0\\
+     \bra{v}\hat{A} \ket{v} - \frac{\left|\bra{v} \hat{A} \ket{w} \right|^2}{\bra{w} \hat{A} \ket{w}} &\geq 0\\
+     \bra{v}\hat{A} \ket{v} &\geq \frac{\left|\bra{v} \hat{A} \ket{w} \right|^2}{\bra{w} \hat{A} \ket{w}}\\
+     \bra{v}\hat{A} \ket{v} \bra{w} \hat{A} \ket{w} &\geq \left|\bra{v} \hat{A} \ket{w} \right|^2
 \end{align*}
 \end{proof}
     
 \subsection{}
 \textit{Consider Hermitian operators $\hat{A}, \hat{B}$ and $\hat{H}$ which satisfy the commutations relations, $[\hat{A}, \hat{H}]=[\hat{B}, \hat{H}]=0,$ but $[\hat{A}, \hat{B}] \neq 0 .$ Prove that at least one of the eigenvalues of $\hat{H}$ must be degenerate.}
 \begin{proof}
-Assume there are no degeneracies in $\hat H$, for basis kets $\ket{\alpha_i}$ and $\ket{\beta_j}$ of operators $\hat A$ and $\hat B$ respectively. This gives
+Assume there are no degeneracies in $\hat H$, for basis kets $\ket{\alpha_i}$ and $\ket{\beta_j}$ of operators $\hat{A}$ and $\hat{B}$ respectively. This gives
 \begin{align*}
     \hat H \ket{\alpha_i} &= a_i \ket{\alpha_i}\\
     \hat H \ket{\beta_j} &= b_j \ket{\beta_j}   . 
 \end{align*}
-If $\hat H$ is non-degenerate, $\bra{\alpha_i}\ket{\beta_j} = \delta_{ij}$, which implies the eigenkets for $\hat A$ are the same as the eigenkets for $\hat B$. If $\hat A$ and $\hat B$ have the same eigenkets, $[\hat A,\hat B] = 0$. But we assumed $[\hat A,\hat B] \neq 0$. Contradiction!
+If $\hat H$ is non-degenerate, $\bra{\alpha_i}\ket{\beta_j} = \delta_{ij}$, which implies the eigenkets for $\hat{A}$ are the same as the eigenkets for $\hat{B}$. If $\hat{A}$ and $\hat{B}$ have the same eigenkets, $[\hat{A},\hat{B}] = 0$. But we assumed $[\hat{A},\hat{B}] \neq 0$. Contradiction!
 
 $\therefore \hat H $ is degenerate.
 \end{proof} 
@@ -116,24 +109,24 @@ $$
 \ln (\operatorname{det}(\hat{B}))=\operatorname{Tr}(\ln (\hat{B}))
 $$
 }
-$\hat A$ can be diagonalized with matrices $\hat P$ and $\hat{P}^{-1}$ as 
+$\hat{A}$ can be diagonalized with matrices $\hat P$ and $\hat{P}^{-1}$ as 
 $$
-\hat A = \hat{P}^{-1} \hat \Lambda \hat P. 
+\hat{A} = \hat{P}^{-1} \hat \Lambda \hat P. 
 $$
 
 \begin{align*}
-    \exp\left(\hat A\right) & = \sum_{n=0}^\infty \frac{\hat{A}^n} {n!} \\ 
+    \exp\left(\hat{A}\right) & = \sum_{n=0}^\infty \frac{\hat{A}^n} {n!} \\ 
     &= \sum_{n=0}^\infty  \hat{P}^{-1} \frac{\hat{\Lambda}^n} {n!}\, \hat{P}\\
     &= \hat{P}^{-1} \sum_{n=0}^\infty  \frac{\hat{\Lambda}^n} {n!}\, \hat{P}\\
 \end{align*}
 \begin{align*}
-    \operatorname{det}\left(\exp\left(\hat A\right) \right)&= \operatorname{det}\left(\hat{P}^{-1} \sum_{n=0}^\infty  \frac{\hat{\Lambda}^n} {n!}\, \hat{P} \right)\\
+    \operatorname{det}\left(\exp\left(\hat{A}\right) \right)&= \operatorname{det}\left(\hat{P}^{-1} \sum_{n=0}^\infty  \frac{\hat{\Lambda}^n} {n!}\, \hat{P} \right)\\
     &= \operatorname{det}\left(\hat{P}^{-1}\right)\operatorname{det}\left(\exp\left(\hat \Lambda\right)\right)\operatorname{det}\left(\hat{P}\right)\\
     &= \operatorname{det}\left(\exp\left(\hat \Lambda\right)\right)\\
     &= e^{\lambda_1}e^{\lambda_2}e^{\lambda_3}e^{\lambda_4}\cdots\\
 \end{align*}
 \begin{align*}
-    e^{\operatorname{Tr} \left(\hat A\right)}&=e^{\lambda_1+\lambda_2+\lambda_3+\ldots} \\
+    e^{\operatorname{Tr} \left(\hat{A}\right)}&=e^{\lambda_1+\lambda_2+\lambda_3+\ldots} \\
     &= e^{\lambda_1}e^{\lambda_2}e^{\lambda_3}e^{\lambda_4}\ldots\\
 \end{align*}
 
@@ -142,16 +135,16 @@ $$
 \end{equation*}
 
 \begin{align*}
-    \operatorname{det}\left(\hat B \right) &= \lambda_1 \lambda_2 \lambda_3 \ldots\\
-    \ln\left(\operatorname{det}\left(\hat B \right)\right) & = ln \lambda_1+ ln \lambda_2+ ln \lambda_3+\ldots\\
-    \operatorname{Tr}\left( \ln{\hat B} \right) &=  ln \lambda_1+ ln \lambda_2+ ln \lambda_3+\ldots
+    \operatorname{det}\left(\hat{B} \right) &= \lambda_1 \lambda_2 \lambda_3 \ldots\\
+    \ln\left(\operatorname{det}\left(\hat{B} \right)\right) & = ln \lambda_1+ ln \lambda_2+ ln \lambda_3+\ldots\\
+    \operatorname{Tr}\left( \ln{\hat{B}} \right) &=  ln \lambda_1+ ln \lambda_2+ ln \lambda_3+\ldots
 \end{align*}
 
 \begin{equation*}
-\boxed{ \operatorname{Tr}\left( \ln{\hat B} \right) = \ln{\operatorname{det}\left(\hat B\right)}}
+\boxed{ \operatorname{Tr}\left( \ln{\hat{B}} \right) = \ln{\operatorname{det}\left(\hat{B}\right)}}
 \end{equation*}
 
-
+\newpage
 \section{Anti-Hermitian operators}
 \subsection{}
 \textit{An operator $\hat{K}$ is said to be anti-Hermitian if it satisfies $\hat{K}^{\dagger}=-\hat{K}$. Show that an anti-Hermitian operator can have at most one real eigenvalue (possibly degenerate).}
@@ -160,24 +153,24 @@ $$
     \bra{\psi_i} \hat K \ket{\psi_i} &= \lambda_i \\
     \bra{\psi_i} \hat{K}^\dagger \ket{\psi_i} &= \lambda_i^* \\
     -\bra{\psi_i} \hat{K} \ket{\psi_i} &= \lambda_i^* \\
-    -\lambda_i &= \lambda_i^* \\
+    -\lambda_i &= \lambda_i^* 
 \end{align*}
 Only true when $\Re\left(\lambda_i\right)= 0$. The only possible real eigenvalue of any anti-Hermitian matrix is 0. 
 
 \subsection{}
 \textit{Show that the commutator $[\hat{A}, \hat{B}]$ of two Hermitian operators, $\hat{A}, \hat{B},$ is either anti-Hermitian or zero.}
 \begin{proof}
-$$
-\bra \psi [\hat{A}, \hat{B}] \ket \psi = \bra \psi \hat{A}\hat{B} \ket \psi -\bra \psi \hat{B}\hat{A} \ket \psi 
-$$
+\begin{equation*}
+    \bra{\psi} [\hat{A}, \hat{B}] \ket{\psi} = \bra{\psi} \hat{A}\hat{B} \ket{\psi} -\bra{\psi} \hat{B}\hat{A} \ket{\psi} 
+\end{equation*}
 In the case that $\hat{A}= \hat{B}$, $[\hat{A}, \hat{B}] = 0$. Otherwise, 
 \begin{align*}
-    [\hat{A}, \hat{B}]^\dagger &= \left(\hat A \hat B \right)^\dagger - \left(\hat B \hat A \right)^\dagger \\
-    &=\hat B \hat A -\hat A \hat B\\
-    &=-\left(\hat A \hat B-\hat B \hat A  \right)\\
-    &= - [\hat{A}, \hat{B}]\\
+    [\hat{A}, \hat{B}]^\dagger &= \left(\hat{A} \hat{B} \right)^\dagger - \left(\hat{B} \hat{A} \right)^\dagger \\
+    &=\hat{B} \hat{A} -\hat{A} \hat{B}\\
+    &=-\left(\hat{A} \hat{B}-\hat{B} \hat{A}  \right)\\
+    &= - [\hat{A}, \hat{B}]
 \end{align*}
-$\therefore [\hat{A}, \hat{B}]$ is either Anti-Hermitian or 0.  
+$\therefore \left[\hat{A}, \hat{B}\right]$ is either Anti-Hermitian or 0.  
 \end{proof}
 
 \subsection{}
@@ -209,12 +202,13 @@ $$
 has no solutions when $ \dim \mathcal{H} \neq 0$. In an infinite dimensional $\mathcal{H}$, $\operatorname{Tr}\left(\hat 1\right)$ is undefined. 
 
 
+\newpage
 \section{Functions of operators}
 \subsection{}
 \textit{Consider an operator $\hat{C} \equiv(\hat{A}-\lambda \hat{B})^{-1}$. Assuming that the operator $\hat{A}$ is invertible, with inverse denoted $\hat{A}^{-1}$, derive a formal Taylor series expansion for $\hat{C}$ as a power series in the parameter $\lambda$.}
  
 \begin{align*}
-\hat C &\equiv \left(\hat A - \lambda \hat B \right)^{-1} \\
+\hat C &\equiv \left(\hat{A} - \lambda \hat{B} \right)^{-1} \\
 & = \left(\hat{A} \hat{A}^{-1} \hat{A}-\hat{A} \hat{A}^{-1} \hat{B} \lambda\right)^{-1}\\
 & = \hat{A}^{-1} \left(\hat 1 -  \hat{A}^{-1} \hat{B} \lambda\right)^{-1}\\
 & = \hat{A}^{-1} \sum_n \left(\hat{A}^{-1} \hat{B}\right)^n \lambda^n\\
@@ -235,12 +229,12 @@ arbitrary operators $\hat{A}$ and $\hat{B}$.}
     &= \sum_{n=0}^{\infty} \frac{1}{n}(\lambda \hat{A}+\hat{B})^{n} \hat{A}\\
     &= e^{\lambda \hat{A}+\hat{B}} \hat{A} \\
     &= \hat{A} e^{\lambda \hat{A}+\hat{B}} \qquad \text{if} \left[\hat{A},\hat{B}\right] = 0 \\
-    &= \hat A \hat{\mathcal{O}}_\lambda
+    &= \hat{A} \hat{\mathcal{O}}_\lambda
 \end{align*}
 
 \begin{equation*}
 \boxed{
-    \operatorname{Tr}\left(\hat{\mathcal{O}}_\lambda \right) = \operatorname{Tr}\left(\hat A \hat{\mathcal{O}}_\lambda\right)
+    \operatorname{Tr}\left(\hat{\mathcal{O}}_\lambda \right) = \operatorname{Tr}\left(\hat{A} \hat{\mathcal{O}}_\lambda\right)
 }
 \end{equation*}
 
@@ -250,8 +244,8 @@ $$\exp(\lambda \hat{A}) \exp(\lambda \hat{B})=\exp \left(\lambda \hat{A}+\lambda
 \begin{proof}
     First note that the equation holds for $\lambda = 0$. Then, taking derivatives of each side of the equation, 
     \begin{align*}
-        \partial_\lambda\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right)&=\left(\hat A + \hat B + \lambda [\hat A, \hat B]  \right)\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right)\\
-        \partial_\lambda\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right) &= \left(\hat A + \hat B +\lambda[\hat A, \hat B]\right)\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right)\\
+        \partial_\lambda\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right)&=\left(\hat{A} + \hat{B} + \lambda [\hat{A}, \hat{B}]  \right)\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right)\\
+        \partial_\lambda\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right) &= \left(\hat{A} + \hat{B} +\lambda[\hat{A}, \hat{B}]\right)\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right)\\
         \left[\partial_\lambda\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right) \right]_{\lambda=0} &= \left[\partial_\lambda\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right) \right]_{\lambda=0}\\
         \left[{\partial_\lambda}^n\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right) \right]_{\lambda=0} &= \left[{\partial_\lambda}^n\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right) \right]_{\lambda=0}
     \end{align*}
@@ -275,20 +269,21 @@ $$\exp(\lambda \hat{A}) \exp(\lambda \hat{B})=\exp \left(\lambda \hat{A}+\lambda
 \textit{Find the eigenvalues of the three operators $\hat{A}, \hat{B}$ and $\hat{C}$ which satisfy $\hat{A}^{2}=p^{2}, \hat{B}^{2}=p \hat{B}$ and $\hat{C}^{3}=p^{2} \hat{C}$ for real c-number $p$.}
 
 \begin{align*}
-    \hat{A}^2 \ket a = \hat A \left(a \ket a\right)  &= p ^2 \ket a \\
+    \hat{A}^2 \ket a = \hat{A} \left(a \ket a\right)  &= p ^2 \ket a \\
     &\implies a = \pm p \\
-    \hat{B}^2 \ket b = \hat{B} \left(b \ket b \right)  &= p \hat B \ket b \\
+    \hat{B}^2 \ket b = \hat{B} \left(b \ket b \right)  &= p \hat{B} \ket b \\
      &\implies b = p \\
     \hat{C}^3 \ket c=\hat{C} c^2 \ket c  &= p^2 \hat{C} \ket c \\
      &\implies c = \pm p \\
 \end{align*}
 
+\newpage
 \section{Unitary Operators}
 \subsection{}
 \textit{Show that an operator $\hat{A}$ that satisfies any two of the following conditions: (i) $\hat{A}$ is unitary, (ii) $\hat{A}$ is Hermitian, (iii) $\hat{A}^2 =\hat{1}$, also satisfies the third. }
 
 
-Case 1: $\hat A$ is unitary and Hermitian. 
+Case 1: $\hat{A}$ is unitary and Hermitian. 
 $$
 \begin{array}{r}
 \hat{A}^{-1} \hat{A}=\hat{1} \\
@@ -298,17 +293,17 @@ $$
 \end{array}
 $$
 
-Case 2: $\hat A$ is Hermitian and $\hat{A}^2 = \hat 1$. 
+Case 2: $\hat{A}$ is Hermitian and $\hat{A}^2 = \hat 1$. 
 \begin{align*}
     \hat{A}&=\hat{A}^\dagger \\
-    \hat{A}^2 &=\hat{A}^\dagger \hat A \\ 
-    \hat{1}&=\hat{A}^\dagger \hat A \\
-    \hat{A}^{-1}&=\hat{A}^\dagger \hat A \hat{A}^{-1} \\
+    \hat{A}^2 &=\hat{A}^\dagger \hat{A} \\ 
+    \hat{1}&=\hat{A}^\dagger \hat{A} \\
+    \hat{A}^{-1}&=\hat{A}^\dagger \hat{A} \hat{A}^{-1} \\
     \hat{A}^{-1}&=\hat{A}^\dagger\\
     \hat{A}^{-1}&=\hat{A}
 \end{align*}
 
-Case 3: $\hat A$ is unitary and $\hat{A}^2 = \hat 1$.
+Case 3: $\hat{A}$ is unitary and $\hat{A}^2 = \hat 1$.
 \begin{align*}
     \hat{A}^2&=\hat{1} \\
     \hat{A}^2&=\hat{A} \hat{A}^{-1} \\
@@ -363,5 +358,19 @@ $$
 \hat{A}^{\prime}=\hat{U} \hat{A} \hat{U}^{\dagger}.
 $$
 \textit{Show that $\operatorname{Tr}\left(\hat{A}^{\prime}\right)=\operatorname{Tr}(\hat{A})$ and $\operatorname{det}\left(\hat{A}^{\prime}\right)=\operatorname{det}(\hat{A})$}
+
+\begin{align*}
+    \operatorname{Tr}\left(\hat{A}^{\prime}\right)&=\operatorname{Tr}\left(\hat{U}\hat{A}\hat{U}^\dagger\right)\\
+    &=\operatorname{Tr}\left(\hat{A}\hat{U}\hat{U}^\dagger\right)\\
+    &=\operatorname{Tr}\left(\hat{A}\hat{U}\hat{U}^{-1}\right)\\
+    \operatorname{Tr}\left(\hat{A}^{\prime}\right)&=\operatorname{Tr}\left(\hat{A}\right)
+\end{align*}
+
+\begin{align*}
+    \operatorname{det}(\hat{A}^\prime) &= \operatorname{det}(\hat{U})\operatorname{det}(\hat{A})\operatorname{det}(\hat{U}^\dagger)\\
+    &= \operatorname{det}(\hat{U})\operatorname{det}(\hat{A})\operatorname{det}(\hat{U}^{-1})\\
+    &= \frac{\operatorname{det}(\hat{U})}{\operatorname{det}(\hat{U})}\operatorname{det}(\hat{A})\\
+    \operatorname{det}\left(\hat{A}^{\prime}\right)&=\operatorname{det}\left(\hat{A}\right)
+\end{align*}
 
 \end{document}
