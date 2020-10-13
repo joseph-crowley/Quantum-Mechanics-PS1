@@ -62,7 +62,7 @@ $$
 $$
 |\langle v|\hat{A}| w\rangle|^{2} \leq\langle v|\hat{A}| v\rangle\langle w|\hat{A}| w\rangle
 $$ for any two kets, $|v\rangle$ and $|w\rangle,$ in the Hilbert space.
-
+\begin{proof}
 First, let $\ket{\psi}$ be a linear combination of $\ket{v}$ and $\ket{w}$:
 
 \begin{align*}
@@ -90,7 +90,7 @@ Since $\hat A$ has only positive eigenvalues, and each term in the equation abov
      \bra v\hat{A} \ket v &\geq \frac{\left|\bra v \hat A \ket w \right|^2}{\bra w \hat A \ket w}\\
      \bra v\hat{A} \ket v \bra w \hat A \ket w &\geq \left|\bra v \hat A \ket w \right|^2\\
 \end{align*}
-
+\end{proof}
     
 \subsection{}
 \textit{Consider Hermitian operators $\hat{A}, \hat{B}$ and $\hat{H}$ which satisfy the commutations relations, $[\hat{A}, \hat{H}]=[\hat{B}, \hat{H}]=0,$ but $[\hat{A}, \hat{B}] \neq 0 .$ Prove that at least one of the eigenvalues of $\hat{H}$ must be degenerate.}
@@ -116,9 +116,9 @@ $$
 \ln (\operatorname{det}(\hat{B}))=\operatorname{Tr}(\ln (\hat{B}))
 $$
 }
-
+$\hat A$ can be diagonalized with matrices $\hat P$ and $\hat{P}^{-1}$ as 
 $$
-\hat A = \hat{P}^{-1} \hat \Lambda \hat P
+\hat A = \hat{P}^{-1} \hat \Lambda \hat P. 
 $$
 
 \begin{align*}
@@ -166,22 +166,19 @@ Only true when $\Re\left(\lambda_i\right)= 0$. The only possible real eigenvalue
 
 \subsection{}
 \textit{Show that the commutator $[\hat{A}, \hat{B}]$ of two Hermitian operators, $\hat{A}, \hat{B},$ is either anti-Hermitian or zero.}
-
+\begin{proof}
 $$
 \bra \psi [\hat{A}, \hat{B}] \ket \psi = \bra \psi \hat{A}\hat{B} \ket \psi -\bra \psi \hat{B}\hat{A} \ket \psi 
 $$
-
 In the case that $\hat{A}= \hat{B}$, $[\hat{A}, \hat{B}] = 0$. Otherwise, 
-
 \begin{align*}
     [\hat{A}, \hat{B}]^\dagger &= \left(\hat A \hat B \right)^\dagger - \left(\hat B \hat A \right)^\dagger \\
     &=\hat B \hat A -\hat A \hat B\\
     &=-\left(\hat A \hat B-\hat B \hat A  \right)\\
     &= - [\hat{A}, \hat{B}]\\
 \end{align*}
-
 $\therefore [\hat{A}, \hat{B}]$ is either Anti-hermitian or 0.  
-
+\end{proof}
 
 \subsection{}
 \textit{Demonstrate that it is not possible for two Hermitian operators, $\hat{Q}, \hat{P}$ to satisfy $[\hat{Q}, \hat{P}]=i \hbar \hat{1},$ where $\hat{1}$ denotes the identity operator in the $n$ - dimensional Hilbert space. How do you reconcile this with with the familiar positionmomentum commutation relations?}
@@ -228,7 +225,7 @@ has no solutions when $ \dim \mathcal{H} \neq 0$. In an infinite dimensional $\m
 \end{equation*}
 
 \subsection{}
-\textit{Consider an operator $\hat{\mathcal{O}}_{\lambda} \equiv \exp (\lambda \hat{A}+\hat{B})$. What conditions must be placed on the operators $\hat{A}$ and $\hat{B}$ so that $\partial_{\lambda} \hat{\mathcal{O}}_{\lambda}=\hat{A} \hat{\mathcal{O}}_{\lambda} ?$ By performing the Taylor series expansion in powers of $\lambda,$ show that $\operatorname{Tr}\left(\partial_{\lambda} \hat{\mathcal{O}}_{\lambda}\right)=\operatorname{Tr}\left(\hat{A} \hat{\mathcal{O}}_{\lambda}\right)$ for
+\textit{Consider an operator $\hat{\mathcal{O}}_{\lambda} \equiv \exp(\lambda \hat{A}+\hat{B})$. What conditions must be placed on the operators $\hat{A}$ and $\hat{B}$ so that $\partial_{\lambda} \hat{\mathcal{O}}_{\lambda}=\hat{A} \hat{\mathcal{O}}_{\lambda} ?$ By performing the Taylor series expansion in powers of $\lambda,$ show that $\operatorname{Tr}\left(\partial_{\lambda} \hat{\mathcal{O}}_{\lambda}\right)=\operatorname{Tr}\left(\hat{A} \hat{\mathcal{O}}_{\lambda}\right)$ for
 arbitrary operators $\hat{A}$ and $\hat{B}$.}
 
 \begin{align*}
@@ -248,12 +245,42 @@ arbitrary operators $\hat{A}$ and $\hat{B}$.}
 \end{equation*}
 
 \subsection{}
-\textit{Consider two operators $\hat{A}$ and $\hat{B}$ whose commutator is a c-number. Show that 
-$$\exp (\lambda \hat{A}) \exp (\lambda \hat{B})=\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\lambda^{2}[\hat{A}, \hat{B}] / 2\right)$$}
+\textit{Consider two operators $\hat{A}$ and $\hat{B}$ whose commutator is a complex number. Show that 
+$$\exp(\lambda \hat{A}) \exp(\lambda \hat{B})=\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\lambda^{2}[\hat{A}, \hat{B}] / 2\right)$$}
+\begin{proof}
+    First note that the equation holds for $\lambda = 0$. Then, taking derivatives of each side of the equation, 
+    \begin{align*}
+        \partial_\lambda\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right)&=\left(\hat A + \hat B + \lambda [\hat A, \hat B]  \right)\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right)\\
+        \partial_\lambda\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\lambda^{2}[\hat{A}, \hat{B}] / 2\right)\right) &= \left(\hat A + \hat B +\lambda[\hat A, \hat B]\right)\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\lambda^{2}[\hat{A}, \hat{B}] / 2\right)\right)\\
+        \left[\partial_\lambda\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right) \right]_{\lambda=0} &= \left[\partial_\lambda\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\lambda^{2}[\hat{A}, \hat{B}] / 2\right)\right) \right]_{\lambda=0}\\
+        \left[{\partial_\lambda}^n\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right) \right]_{\lambda=0} &= \left[{\partial_\lambda}^n\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\lambda^{2}[\hat{A}, \hat{B}] / 2\right)\right) \right]_{\lambda=0}
+    \end{align*}
+    By induction, 
+    \begin{align*}
+        \left[{\partial_\lambda}^{n+1}\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{\hat{B}})\right) \right]_{\lambda=0} &=(\hat{A}+\hat{B})\left[{\partial_\lambda}^n \exp (\lambda \hat{A}) \exp (\lambda \hat{B})\right]_{\lambda=0}\\
+        & \quad +n[\hat{A}, \hat{B}]\left[{\partial_\lambda}^{n - 1} \exp (\lambda \hat{A}) \exp (\lambda \hat{B})\right]_{\lambda=0}\\
+        &= (\hat{A}+\hat{B})\left[{\partial_\lambda}^{n } \exp \left(\lambda \hat{A}+\lambda \hat{B}+\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right]_{\lambda=0}\\
+        & \quad+n[\hat{A}, \hat{B}]\left[{\partial_\lambda}^{n-1 } \exp \left(\lambda \hat{A}+\lambda \hat{B}+\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right]_{\lambda=0}\\
+        &= \left[{\partial_\lambda}^{n }(\hat{A}+\hat{B}+\lambda[\hat{A}, \hat{B}]) \exp \left(\lambda \hat{A}+\lambda \hat{B}+\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right]_{\lambda=0} \\ 
+        &= \left[{\partial_\lambda}^{n + 1} \exp \left(\lambda \hat{A}+\lambda \hat{B}+\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right]_{\lambda=0}
+    \end{align*}
+    since the equation and each term in its expansion agree at $\lambda = 0$, 
+    $$
+        \boxed{\exp(\lambda \hat{A}) \exp(\lambda \hat{B})=\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\lambda^{2}[\hat{A}, \hat{B}] / 2\right)}
+    $$
+\end{proof}
 
 
 \subsection{}
 \textit{Find the eigenvalues of the three operators $\hat{A}, \hat{B}$ and $\hat{C}$ which satisfy $\hat{A}^{2}=p^{2}, \hat{B}^{2}=p \hat{B}$ and $\hat{C}^{3}=p^{2} \hat{C}$ for real c-number $p$.}
 
+\begin{align*}
+    \hat{A}^2 \ket a = \hat A \left(a \ket a\right)  &= p ^2 \ket a \\
+    &\implies a = \pm p \\
+    \hat{B}^2 \ket b = \hat{B} \left(b \ket b \right)  &= p \hat B \ket b \\
+     &\implies b = p \\
+    \hat{C}^3 \ket c=\hat{C} c^2 \ket c  &= p^2 \hat{C} \ket c \\
+     &\implies c = \pm p \\
+\end{align*}
 
 \end{document}
