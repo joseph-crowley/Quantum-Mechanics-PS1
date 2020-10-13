@@ -247,19 +247,14 @@ $$\exp(\lambda \hat{A}) \exp(\lambda \hat{B})=\exp \left(\lambda \hat{A}+\lambda
     \begin{align*}
         \partial_\lambda\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right)&=\left(\hat{A} + \hat{B} + \lambda [\hat{A}, \hat{B}]  \right)\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right)\\
         \partial_\lambda\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right) &= \left(\hat{A} + \hat{B} +\lambda[\hat{A}, \hat{B}]\right)\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right)\\
-        \left[\partial_\lambda\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right) \right]_{\lambda=0} &= \left[\partial_\lambda\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right) \right]_{\lambda=0}\\
-        \left[{\partial_\lambda}^n\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{B})\right) \right]_{\lambda=0} &= \left[{\partial_\lambda}^n\left(\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right) \right]_{\lambda=0}
     \end{align*}
-    By induction, 
+    Letting $\hat{f} = \exp(\lambda \hat{A}) \exp(\lambda \hat{B})$ and $\hat{g} = \exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)$, notice that 
     \begin{align*}
-        \left[{\partial_\lambda}^{n+1}\left(\exp(\lambda \hat{A}) \exp(\lambda \hat{\hat{B}})\right) \right]_{\lambda=0} &=(\hat{A}+\hat{B})\left[{\partial_\lambda}^n \exp (\lambda \hat{A}) \exp (\lambda \hat{B})\right]_{\lambda=0}\\
-        & \quad +n[\hat{A}, \hat{B}]\left[{\partial_\lambda}^{n - 1} \exp (\lambda \hat{A}) \exp (\lambda \hat{B})\right]_{\lambda=0}\\
-        &= (\hat{A}+\hat{B})\left[{\partial_\lambda}^{n } \exp \left(\lambda \hat{A}+\lambda \hat{B}+\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right]_{\lambda=0}\\
-        & \quad+n[\hat{A}, \hat{B}]\left[{\partial_\lambda}^{n-1 } \exp \left(\lambda \hat{A}+\lambda \hat{B}+\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right]_{\lambda=0}\\
-        &= \left[{\partial_\lambda}^{n }(\hat{A}+\hat{B}+\lambda[\hat{A}, \hat{B}]) \exp \left(\lambda \hat{A}+\lambda \hat{B}+\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right]_{\lambda=0} \\ 
-        &= \left[{\partial_\lambda}^{n + 1} \exp \left(\lambda \hat{A}+\lambda \hat{B}+\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)\right]_{\lambda=0}
+        \partial_\lambda \hat{f} &= (\hat{A} + \hat{B}) \hat{f} \\ 
+        \partial_\lambda \hat{g} &= (\hat{A} + \hat{B}) \hat{g} \\ 
     \end{align*}
-    since the equation and each term in its expansion agree at $\lambda = 0$, 
+    
+    since $\hat{f}$ and $\hat{g}$ agree at $\lambda = 0$, and they satisfy the same differential equation for all values of $\lambda$,  
     $$
         \boxed{\exp(\lambda \hat{A}) \exp(\lambda \hat{B})=\exp \left(\lambda \hat{A}+\lambda \hat{B} \right)  \exp \left(\frac{\lambda^{2}}{2}[\hat{A}, \hat{B}]\right)}
     $$
